@@ -467,9 +467,9 @@ open class AMProgressBar: UIView {
     }
     
     // MARK: - Public Methods
-    public func setProgress(progress: CGFloat, animated: Bool) {
+    public func setProgress(progress: CGFloat, animated: Bool, text: String? = "") {
         progressValue = progress
-        textLabel?.text = barMode_ == .undetermined ? "" : String(format: "%i%%", Int(progressValue * 100))
+        textLabel?.text = barMode_ == .undetermined ? "" : text
         textLabel?.sizeToFit()
         updateTextPosition(animated: animated)
         updateProgress(animated: animated)
